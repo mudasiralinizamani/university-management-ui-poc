@@ -9,13 +9,37 @@ import IconButton from "@mui/material/IconButton";
 // Importing Layouts - Mudasir Nizamani
 import AuthLayout from "./core/layouts/AuthLayout";
 import AdminLayout from "./core/layouts/AdminLayout";
+import CreateDepartment from "./features/admin/pages/Departments/CreateDepartment";
 
 // Importing Auth Pages - Mudasir Nizamani
 const AuthSignin = lazy(() => import("./features/auth/pages/Signin"));
 const AuthAdmin = lazy(() => import("./features/auth/pages/Admin"));
+const AuthDean = lazy(() => import("./features/auth/pages/Dean"));
 
-// Imprintg Admin Pages - Mudasir Nizamani
+// Importing Admin Pages - Mudasir Nizamani
 const AdminIndex = lazy(() => import("./features/admin/pages/Index"));
+const AdminProfile = lazy(() => import("./features/admin/pages/Profile"));
+const AdminSettings = lazy(() => import("./features/admin/pages/Settings"));
+const AdminUsers = lazy(() => import("./features/admin/pages/Users/Users"));
+const AdminUser = lazy(() => import("./features/admin/pages/Users/User"));
+const AdminFaculties = lazy(
+  () => import("./features/admin/pages/Faculties/Faculties")
+);
+const AdminFaculty = lazy(
+  () => import("./features/admin/pages/Faculties/Faculty")
+);
+const AdminCreateFaculty = lazy(
+  () => import("./features/admin/pages/Faculties/CreateFaculty")
+);
+const AdminDepartments = lazy(
+  () => import("./features/admin/pages/Departments/Departments")
+);
+const AdminDepartment = lazy(
+  () => import("./features/admin/pages/Departments/Department")
+);
+const AdminCreateDepartment = lazy(
+  () => import("./features/admin/pages/Departments/CreateDepartment")
+);
 
 function App() {
   const toastRef = createRef<any>();
@@ -55,6 +79,7 @@ function App() {
         >
           <Route index element={<AuthSignin />} />
           <Route path="auth/admin" element={<AuthAdmin />} />
+          <Route path="auth/dean" element={<AuthDean />} />
         </Route>
 
         <Route
@@ -85,6 +110,25 @@ function App() {
           }
         >
           <Route index element={<AdminIndex />} />
+          <Route path="profile" element={<AdminProfile />} />
+          <Route path="settings" element={<AdminSettings />} />
+
+          {/* Users Routes - Mudasir Nizamani */}
+          <Route path="users" element={<AdminUsers />} />
+          <Route path="users/:user_id" element={<AdminUser />} />
+
+          {/* Faculties Routes - Mudasir Nizamani */}
+          <Route path="faculties" element={<AdminFaculties />} />
+          <Route path="faculties/:faculty_id" element={<AdminFaculty />} />
+          <Route path="faculties/create" element={<AdminCreateFaculty />} />
+
+          {/* Departments Routes - Mudasir Nizamani */}
+          <Route path="departments" element={<AdminDepartments />} />
+          <Route
+            path="departments/:department_id"
+            element={<AdminDepartment />}
+          />
+          <Route path="departments/create" element={<CreateDepartment />} />
         </Route>
       </Routes>
     </div>

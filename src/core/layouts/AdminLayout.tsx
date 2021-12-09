@@ -19,7 +19,7 @@ function AdminLayout() {
       (localStorage.getItem("id") === null &&
         localStorage.getItem("role") !== "ADMIN")
     ) {
-      enqueueSnackbar("Not Authrozied to access this", { variant: "warning" });
+      enqueueSnackbar("Not Authrozied", { variant: "warning" });
       navigate("/");
     }
   }, []);

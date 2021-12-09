@@ -58,8 +58,6 @@ function Signin() {
         }
       })
       .catch((err: any) => {
-        console.log("Error" + err.response?.data.code);
-        console.log(err.response?.status);
         if (
           err.response?.status === 400 &&
           err.response?.data.code === "ValidationError"

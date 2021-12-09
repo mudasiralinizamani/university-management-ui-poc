@@ -4,19 +4,25 @@ const AuthEndpoints = {
 };
 
 const UserEndpoints = {
-  GetUser: "/user/getuser/",
-  GetUsers: "/user/getusers",
-  GetUsersCount: "/user/getuserscount",
-  GetUserById: "/user/GetUserById/",
-  GetDeans: "/user/GetDeans/",
+  GetUser: "/users/getuser/",
+  GetUsers: "/users/getusers",
+  GetUsersCount: "/users/getuserscount",
+  GetDeans: "/users/getusersbyrole/DEAN",
 };
 
-const FacultyEndpoints = {
-  GetFaculties: "/faculty/GetFaculties",
+const FacultiesEndpoints = {
+  GetFaculties: "/faculties/getfaculties",
+  GetFaculty: "/faculties/getfaculty/",
+  CreateFaculty: "/faculties/create",
 };
 
 const DepartmentEndpoints = {
   GetDepartments: "/department/GetDepartments",
 };
 
-export { AuthEndpoints, UserEndpoints, FacultyEndpoints, DepartmentEndpoints };
+export {
+  AuthEndpoints,
+  UserEndpoints,
+  FacultiesEndpoints,
+  DepartmentEndpoints,
+};
