@@ -19,15 +19,20 @@ function Sidebar() {
   const [subjectsActive, setSubjectsActive] = useState<boolean>(false);
 
   useEffect(() => {
-    if (location.pathname === "/admin/users") {
+    const isUsers = location.pathname.includes("/admin/users");
+    const isFaculties = location.pathname.includes("/admin/faculties");
+    const isDepartments = location.pathname.includes("/admin/departments");
+    const isSubjects = location.pathname.includes("/admin/subjects");
+
+    if (isUsers) {
       setUsersActive(true);
     } else if (location.pathname === "/admin") {
       setHomeActive(true);
-    } else if (location.pathname === "/admin/faculties") {
+    } else if (isFaculties) {
       setFacultiesActive(true);
-    } else if (location.pathname === "/admin/departments") {
+    } else if (isDepartments) {
       setDepartmentsActive(true);
-    } else if (location.pathname === "/admin/subjects") {
+    } else if (isSubjects) {
       setSubjectsActive(true);
     }
 
@@ -43,8 +48,8 @@ function Sidebar() {
   const { enqueueSnackbar } = useSnackbar();
   const handleSignout = () => {
     Signout();
-    enqueueSnackbar("Successfully Signout", { variant: "success" });
     navigate("/");
+    enqueueSnackbar("Successfully Signout", { variant: "success" });
   };
   return (
     <div className="sidebar5 js-sidebar4">
@@ -98,7 +103,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <Link to="" className="sidebar5__logout" onClick={handleSignout}>
+      <Link to="/" className="sidebar5__logout" onClick={handleSignout}>
         <svg className="icon icon-logout">
           <use xlinkHref="/assets/square/img/sprite.svg#icon-logout"></use>
         </svg>

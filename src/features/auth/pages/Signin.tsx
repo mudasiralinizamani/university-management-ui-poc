@@ -155,7 +155,7 @@ function Signin() {
 
         <ul className="login__links">
           <li>
-            <Link to="/auth/signup/" className="login__link">
+            <Link to="/auth/admin/" className="login__link">
               Sign Up?
             </Link>
           </li>

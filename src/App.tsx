@@ -13,8 +13,14 @@ import CreateDepartment from "./features/admin/pages/Departments/CreateDepartmen
 
 // Importing Auth Pages - Mudasir Nizamani
 const AuthSignin = lazy(() => import("./features/auth/pages/Signin"));
+const AuthSignup = lazy(() => import("./features/auth/pages/Signup"));
+
 const AuthAdmin = lazy(() => import("./features/auth/pages/Admin"));
 const AuthDean = lazy(() => import("./features/auth/pages/Dean"));
+const AuthHod = lazy(() => import("./features/auth/pages/Hod"));
+const AuthCourseAdviser = lazy(
+  () => import("./features/auth/pages/CourseAdviser")
+);
 
 // Importing Admin Pages - Mudasir Nizamani
 const AdminIndex = lazy(() => import("./features/admin/pages/Index"));
@@ -22,6 +28,7 @@ const AdminProfile = lazy(() => import("./features/admin/pages/Profile"));
 const AdminSettings = lazy(() => import("./features/admin/pages/Settings"));
 const AdminUsers = lazy(() => import("./features/admin/pages/Users/Users"));
 const AdminUser = lazy(() => import("./features/admin/pages/Users/User"));
+const AdminSubjects = lazy(() => import("./features/admin/pages/Subject"));
 const AdminFaculties = lazy(
   () => import("./features/admin/pages/Faculties/Faculties")
 );
@@ -78,8 +85,11 @@ function App() {
           }
         >
           <Route index element={<AuthSignin />} />
+          <Route path="auth/signup" element={<AuthSignup />} />
           <Route path="auth/admin" element={<AuthAdmin />} />
           <Route path="auth/dean" element={<AuthDean />} />
+          <Route path="auth/hod" element={<AuthHod />} />
+          <Route path="auth/courseadviser" element={<AuthCourseAdviser />} />
         </Route>
 
         <Route
@@ -112,6 +122,7 @@ function App() {
           <Route index element={<AdminIndex />} />
           <Route path="profile" element={<AdminProfile />} />
           <Route path="settings" element={<AdminSettings />} />
+          <Route path="subjects" element={<AdminSubjects />} />
 
           {/* Users Routes - Mudasir Nizamani */}
           <Route path="users" element={<AdminUsers />} />

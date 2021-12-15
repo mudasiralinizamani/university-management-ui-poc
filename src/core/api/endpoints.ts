@@ -8,6 +8,8 @@ const UserEndpoints = {
   GetUsers: "/users/getusers",
   GetUsersCount: "/users/getuserscount",
   GetDeans: "/users/getusersbyrole/DEAN",
+  GetHods: "/users/getusersbyrole/HOD",
+  GetCourseAdvisers: "/users/getusersbyrole/COURSEADVISER",
 };
 
 const FacultiesEndpoints = {
@@ -17,7 +19,8 @@ const FacultiesEndpoints = {
 };
 
 const DepartmentEndpoints = {
-  GetDepartments: "/department/GetDepartments",
+  GetDepartments: "/departments/getdepartments",
+  GetFacultyDepartments: "/departments/getfacultydepartments/"
 };
 
 export {

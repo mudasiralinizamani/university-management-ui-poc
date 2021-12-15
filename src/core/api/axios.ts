@@ -1,7 +1,7 @@
-import axios, { AxiosInstance } from "axios";
+  import axios, { AxiosInstance } from "axios";
 
-const instance: AxiosInstance = axios.create({
-  baseURL: "http://localhost:4000/",
-});
+  const instance: AxiosInstance = axios.create({
+    baseURL: "https://pure-gorge-14177.herokuapp.com/",
+  });
 
-export default instance;
+  export default instance;
